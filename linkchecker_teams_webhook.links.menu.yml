@@ -1,0 +1,6 @@
+linkchecker_teams_webhook.settings:
+  title: Teams Webhook
+  description: "Configure the link checker teams webhook."
+  parent: linkchecker.admin_settings_form
+  route_name: linkchecker.admin_settings_form
+  weight: 1

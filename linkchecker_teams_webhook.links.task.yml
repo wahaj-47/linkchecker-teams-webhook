@@ -1,0 +1,9 @@
+linkchecker_teams_webhook.settings:
+  title: "Teams webhook"
+  route_name: linkchecker_teams_webhook.settings
+  base_route: linkchecker.admin_settings_form
+
+linkchecker_csv_export.settings:
+  title: "Export"
+  route_name: linkchecker_csv_export.settings
+  base_route: linkchecker.admin_settings_form

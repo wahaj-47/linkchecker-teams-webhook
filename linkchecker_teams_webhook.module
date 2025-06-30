@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Posts link checker report to teams webhook in certain intervals.
+ */
+
+use Drupal\Component\Render\FormattableMarkup;
+use Drupal\linkchecker_teams_webhook\LinkcheckerTeamsWebhookInterval;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function linkchecker_teams_webhook_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.linkchecker_teams_webhook':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('This module adds options to send periodic report to a MS Teams channel about
+            what links are broken on your site. It uses the awesome Link checker module to do the heavy lifting, and only
+            sends reports based on this.') . '</p>';
+            return $output;
+        
+        default:
+    }
+    
+}
+
+/**
+ * Implements hook_cron().
+ */
+//function linkchecker_teams_webhook_cron() {
+//  /** @var \Drupal\linkchecker_teams_webhook\LinkcheckerTeamsWebhookReportBuilder $builder */
+//  $builder = \Drupal::service('linkchecker_teams_webhook.report_builder');
+//  $builder->runCronCheck();
+//}
+

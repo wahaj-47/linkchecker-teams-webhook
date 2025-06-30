@@ -1,0 +1,12 @@
+{
+    "name": "drupal/linkchecker_teams_webhook",
+    "require": {
+        "drupal/linkchecker": "^1.0@beta || ^2.0@alpha",
+        "drupal/core": "^9 || ^10 || ^11"
+    },
+    "type": "drupal-module",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "description": "Posts link checker report to teams webhook in certain intervals."
+}

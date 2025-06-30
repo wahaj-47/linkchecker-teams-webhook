@@ -1,0 +1,23 @@
+linkchecker_teams_webhook.settings:
+  path: "/admin/config/content/linkchecker/teams_webhook"
+  defaults:
+    _form: '\Drupal\linkchecker_teams_webhook\Form\LinkcheckerTeamsWebhookConfigForm'
+    _title: "Link checker teams webhook settings"
+  requirements:
+    _permission: "administer linkchecker"
+
+linkchecker_csv_export.settings:
+  path: "/admin/config/content/linkchecker/csv_export"
+  defaults:
+    _form: '\Drupal\linkchecker_teams_webhook\Form\LinkcheckerCSVExportForm'
+    _title: "Link checker CSV export"
+  requirements:
+    _permission: "administer linkchecker"
+
+linkchecker_teams_webhook.export_csv:
+  path: "/admin/reports/linkchecker/export-csv"
+  defaults:
+    _controller: '\Drupal\linkchecker_teams_webhook\Controller\LinkcheckerCSVExportController::download'
+    _title: "Export Broken Links CSV"
+  requirements:
+    _permission: "administer site configuration"

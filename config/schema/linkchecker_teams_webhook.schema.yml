@@ -1,0 +1,10 @@
+linkchecker_teams_webhook.settings:
+  type: config_object
+  label: "Link checker teams webhook settings"
+  mapping:
+    interval:
+      type: string
+      label: "Interval for mail"
+    url:
+      type: string
+      label: "Incoming webhook URL"
