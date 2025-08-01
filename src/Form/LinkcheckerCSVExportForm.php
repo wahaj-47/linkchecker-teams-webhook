@@ -4,7 +4,6 @@ namespace Drupal\linkchecker_teams_webhook\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\linkchecker_teams_webhook\LinkcheckerTeamsWebhookInterval;
 use Drupal\node\Entity\NodeType;
 
 class LinkcheckerCSVExportForm extends ConfigFormBase

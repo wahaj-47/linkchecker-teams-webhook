@@ -129,11 +129,12 @@ class LinkcheckerTeamsWebhookReportBuilder
         }
     }
 
-    public function exportCSV(array $content_types)
+    public function exportCSV(array $content_types, $file_path)
     {
-        \Drupal::logger('streamline')->debug('Parents: @value', [
+        \Drupal::logger('linkchecker')->debug('Types: @value', [
             '@value' => print_r($content_types, TRUE),
         ]);
+
         $links = $this->runQuery(FALSE);
 
         if (empty($links)) {
@@ -142,8 +143,6 @@ class LinkcheckerTeamsWebhookReportBuilder
         }
 
         $links = $this->linkcheckerlinkStorage->loadMultiple($links);
-
-        $file_path = \Drupal::service('file_system')->getTempDirectory() . '/broken_links_report.csv';
 
         $handle = fopen($file_path, 'w');
         if ($handle === FALSE) {
@@ -157,9 +156,10 @@ class LinkcheckerTeamsWebhookReportBuilder
 
         // Write link data to the CSV file.
         foreach ($links as $link) {
+
             $code = $link->code->value;
             $url = $link->url->value;
-            $nid = $link->entity_id->target_id;
+            $nid = $link->parent_entity_id->value;
 
             $node = Node::load($nid);
 
