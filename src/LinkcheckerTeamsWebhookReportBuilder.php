@@ -154,6 +154,8 @@ class LinkcheckerTeamsWebhookReportBuilder
         // Write the CSV header.
         fputcsv($handle, ['URL', 'Title', 'Reference', 'Status Code']);
 
+        $count = 0;
+
         // Write link data to the CSV file.
         foreach ($links as $link) {
 
@@ -170,13 +172,17 @@ class LinkcheckerTeamsWebhookReportBuilder
                     : t('N/A');
 
                 fputcsv($handle, [$url, $title, $reference, $code]);
+                $count++;
             }
         }
 
         // Close the CSV file.
         fclose($handle);
 
-        $this->logger->info('Report successfully exported to @file.', ['@file' => $file_path]);
+        if ($count == 0) {
+            $this->logger->info("No links to report. Deleting @file", ['@file' => $file_path]);
+            unlink($file_path);
+        } else $this->logger->info('Report successfully exported to @file.', ['@file' => $file_path]);
 
         return $file_path;
     }
