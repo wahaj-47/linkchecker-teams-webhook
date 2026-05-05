@@ -3,7 +3,7 @@ description: Posts a report of broken links to a MS Teams webhook.
 package: Custom
 
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 configure: linkchecker_teams_webhook.settings
 dependencies:
   - linkchecker:linkchecker
