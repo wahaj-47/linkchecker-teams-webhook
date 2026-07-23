@@ -1,10 +1,17 @@
 {
   "name": "wahaj-47/linkchecker_teams_webhook",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "description": "Posts link checker report to teams webhook in certain intervals.",
+  "authors": [
+    {
+      "name": "Muhammad Wahaj Hussain (wahaj-47)",
+      "homepage": "https://www.drupal.org/u/wahaj-47",
+      "email": "wahajhssn@gmail.com"
+    }
+  ],
   "require": {
     "drupal/linkchecker": "^1.0@beta || ^2.0@alpha",
     "drupal/core": "^9 || ^10 || ^11"
-  },
-  "type": "drupal-module",
-  "license": "GPL-2.0-or-later",
-  "description": "Posts link checker report to teams webhook in certain intervals."
+  }
 }
