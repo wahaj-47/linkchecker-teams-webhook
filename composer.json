@@ -1,5 +1,5 @@
 {
-  "name": "wahaj-47/linkchecker_teams_webhook",
+  "name": "lsulibraries/linkchecker_teams_webhook",
   "type": "drupal-module",
   "license": "GPL-2.0-or-later",
   "description": "Posts link checker report to teams webhook in certain intervals.",
